@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet"  href="css/offers.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+  <script src="js/offers.js"></script>
+
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+
+<div class="search_drop_down">
+  <select  class="select select-styled" ng-model="searchKeyword" >
+    <option value="">-- Brand --</option>
+    <option ng-repeat="pdt in products" >{{pdt.brand}}</option>
+  </select>
+
+  <select class="select select-styled" ng-model="priceFilter" ng-options="option for option in options" ng-change="selectPriceFilter(priceFilter)">
+    <option value="">-- Price --</option>
+  </select>
+
+  <input class="search" placeholder="Search" size="40" type="text" ng-model="searchKeyword">
+</div>
+<div class="product_box" ng-repeat="pdt in products | filter: searchKeyword | orderBy:'price':priceFilter">
+  <div class="single_1">
+    <div class="container">
+      <div class="discount">
+        <div class="discount_badge">{{pdt.discount}}</div>
+        <span class="discount_text">Discount</span>
+      </div>
+      <img ng-src="{{pdt.image}}" />
+    </div>
+
+  </div>
+  <div class="single_2">
+    <div class="prod_desc">
+      <span class="pdt_name">{{pdt.name}}</span>
+      <div class="pdt_details_2_col">
+        <span class="brand">Brand</span>
+        <span class="brand_name">{{pdt.brand}}</span>
+      </div>
+      <div class="pdt_details_2_col">
+        <span class="brand">Price</span>
+        <span class="brand_name">{{pdt.price}}</span>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="single_3">
+    <div class="quantity_sec">
+      <label>Quantity</label>
+      <br>
+      <input placeholder="Quantity" type="number" ng-model="pdt.quantity" >
+    </div>
+  </div>
+  <div class="single_4">
+    <input type="image" src="img/greyCart.png" alt="Submit" width="48" height="48" ng-show="pdt.quantity<1?true:false" />
+    <input type="image" src="img/orangeCart.png" alt="Submit" width="48" height="48"  ng-hide="pdt.quantity<1?true:false" ng-click="addToCart();"/>
+  </div>
+</div>
+
+
+
+</body>
+
+</html>

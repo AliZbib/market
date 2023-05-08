@@ -1,0 +1,64 @@
+body{font-family: 'Roboto', sans-serif;background:#f1f1f1;margin:0;padding:0}
+header{widht:100%;background:#fff;float:left;width:100%}
+.container{width:100%;max-width:80%;margin:0 auto;}
+.logo{max-width:150px;float:left;width:200px;padding:5px 0;}
+.logo img{width:100%}
+.cart-box{width:40px;float:right;margin:25px 0;position:relative}
+.cart-box img{width:100%}
+
+.products-list-box{width:100%;float:left;
+  padding:50px 0;}
+
+.products-list-box ul{width:100%;display:inline-block;padding:0;margin:0;}
+
+.products-list-box ul li{width:24%;display:inline-block;text-align:center;list-style:none;padding:30px;margin:3px;background:#fff;box-sizing: border-box;}
+
+.products-list-box ul li span{width:100%;max-width:200px;}
+
+.products-list-box ul li span img{max-width:100%;max-height:200px;}
+
+h5{font-size:18px;font-weight:300;color:#000;margin:20px 0}
+h6{font-size:15px;color:#f00;font-weight:400;margin:10px 0 20px 0}
+button{background:#000;outline:inherit;padding:8px 15px;color:#fff;text-transform:uppercase;font-weight:400;font-size:12px;border:0;cursor:pointer;}
+button:hover{background:#999;}
+.cart{float:right}
+[data-count]:after {position: absolute;left: 35px;content: attr(data-count);color: white;background: #e16d6b;font-size: 12px;font-weight: bold;padding: 4px 9px;border-radius: 100%;top:-15px;}
+
+button.add-to-cart.selected{    cursor: not-allowed; background:#aaa;}
+
+.active{color:#000;}
+
+
+.cart-items{
+  width: 200px;
+  position: absolute;
+  padding: 10px;
+  background: #fff;
+  right: 0;
+  top: 100%;
+  display: none;
+}
+
+.cart-items .products-box{list-style:none;float:left;width:100%;margin-bottom:15px; position:relative}
+.cart-items .products-box span{width:25px;float:left;margin-right:10px;}
+.cart-items .products-box span img{width:auto;max-height:50px;}
+.cart-items .products-box button{display:none}
+.cart-items .products-box h6{width:100%;padding-left:30px;margin:0}
+.cart-items .products-box h5{width:100%;padding-left:30px;margin:5px 0}
+
+.products-list-box ul .products-box .close-btn{display: none;}
+
+.close-btn{display:block;color:#f00;font-size:15px;position:absolute;right:10px;top:4px;cursor: pointer;}
+
+.cart-total {
+  width: 200px;
+  background: #fff;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  padding-left: 45px;
+  font-weight: bold;
+  color: #000;
+}
+
+.price i{font-size:14px;font-style:normal;}
